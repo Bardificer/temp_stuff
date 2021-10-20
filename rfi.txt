@@ -1,7 +1,7 @@
 <?php
 $command = "hostname";
 $output = array();
-exec(hostname,$output);
+exec("$command 2>&1",$output);
 echo "<p><i>Command:</i> <nobr>$command</nobr></p>";
 echo '<pre>',print_r($output,true),'</pre>';
 ?>
